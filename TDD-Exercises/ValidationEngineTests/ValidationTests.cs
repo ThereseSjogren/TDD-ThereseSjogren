@@ -28,7 +28,7 @@ namespace ValidationEngineTests
         }
 
         [Test]
-        public void CheckWhatHappensIfInvalidCases()
+        public void CheckWhatHappensIfInvalidCasesReturnFalse()
         {
             //Arrange
             var sut = new Validator();
@@ -39,5 +39,17 @@ namespace ValidationEngineTests
             //Assert
             Assert.IsFalse(res);
         }
+
+        [Test]
+        public void IfMailEmptyReturnFalse()
+        {
+            var sut=new Validator();
+
+            var res = sut.ValidateEmailAddress("");
+
+            Assert.IsFalse(res);
+        }
+
+        
     }
 }
