@@ -28,13 +28,13 @@ namespace ValidationEngineTests
         }
 
         [Test]
-        public void CheckWhatHappensIfInvalidCasesReturnFalse()
+        public void IfMailHasADotBeforeReturnFalse()
         {
             //Arrange
             var sut = new Validator();
 
             //Act
-            var res=sut.ValidateEmailAddress("something");
+            var res=sut.ValidateEmailAddress("name.test@com");
 
             //Assert
             Assert.IsFalse(res);
@@ -51,6 +51,7 @@ namespace ValidationEngineTests
 
             //Assert
             Assert.IsFalse(res);
+
         }
 
         [Test]
@@ -62,6 +63,14 @@ namespace ValidationEngineTests
 
             Assert.IsFalse(res);
         }
-        
+
+        [Test]
+        public void MethodThatThrowCustomException()
+        {
+            var sut = new Validator();
+
+            Assert.Throws<ExceptionMadeBy>(() => { sut.ValidateEmailAddress(""); });
+        }
+
     }
 }

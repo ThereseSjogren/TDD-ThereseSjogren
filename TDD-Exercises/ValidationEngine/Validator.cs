@@ -17,10 +17,12 @@ namespace ValidationEngine
 
             if (string.IsNullOrEmpty(v))
             {
-                return false;
+                throw new ExceptionMadeBy("Something is not right");
             }
             var resultMatch=Regex.IsMatch(v, validemail);
             return resultMatch;
         }
+
+       
     }
 }
