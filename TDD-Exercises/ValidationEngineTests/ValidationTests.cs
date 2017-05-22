@@ -43,13 +43,25 @@ namespace ValidationEngineTests
         [Test]
         public void IfMailEmptyReturnFalse()
         {
+            //Arrange
             var sut=new Validator();
 
+            //Act
             var res = sut.ValidateEmailAddress("");
 
+            //Assert
             Assert.IsFalse(res);
         }
 
+        [Test]
+        public void IfMailNullReturnFalse()
+        {
+            var sut=new Validator();
+
+            var res = sut.ValidateEmailAddress(null);
+
+            Assert.IsFalse(res);
+        }
         
     }
 }
