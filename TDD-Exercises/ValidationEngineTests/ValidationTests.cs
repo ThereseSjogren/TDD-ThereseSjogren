@@ -11,6 +11,7 @@ using ValidationEngine;
 namespace ValidationEngineTests
 {
     [TestFixture]
+    [Category("ExerciseOne")]
     public class ValidationTests
     {
 
