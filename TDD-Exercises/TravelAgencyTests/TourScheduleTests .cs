@@ -54,7 +54,8 @@ namespace TravelAgencyTests
 
             var result = sut.GetToursFor(new DateTime(2013, 4, 1));
 
-            Assert.AreEqual(new DateTime(2013, 4, 1),result[3].DateOfTour.Date);
+            Assert.AreEqual(new DateTime(2013, 4, 1),result[0].DateOfTour.Date);
+            Assert.AreEqual(1,result.Count);
         }
 
         [Test]
@@ -64,7 +65,7 @@ namespace TravelAgencyTests
             sut.CreateTour("January safari", new DateTime(2013, 1, 1, 10, 15, 0), 20);
             sut.CreateTour("Winter safari", new DateTime(2013, 1, 1, 10, 15, 0), 20);
 
-            Assert.Throws<TourAllocationException>(()=> sut.GetToursFor(new DateTime(2013, 1, 1)));
+            Assert.Throws<TourAllocationException>(() => sut.CreateTour("Winter safari", new DateTime(2013, 1, 1, 10, 15, 0), 20));
         }
 
         [Test]
@@ -74,7 +75,7 @@ namespace TravelAgencyTests
             sut.CreateTour("January safari", new DateTime(2013, 1, 1, 10, 15, 0), 20);
             sut.CreateTour("Winter safari", new DateTime(2013, 1, 1, 10, 15, 0), 20);
 
-            var e=Assert.Throws<TourAllocationException>(()=> sut.GetToursFor(new DateTime(2013, 1, 1)));
+            var e=Assert.Throws<TourAllocationException>(() => sut.CreateTour("A new in january safari", new DateTime(2013, 1, 1, 10, 15, 0), 20));
             Assert.AreEqual(new DateTime(2013,1,2),e.SuggestedTime, "Correct suggested time");
         }
     }

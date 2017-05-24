@@ -15,17 +15,18 @@ namespace TravelAgency
 
         public void CreateTour(string nameoftour, DateTime dateTime, int numberofseats)
         {
+            var result = listOfTours.Where(x => x.DateOfTour.Date == dateTime.Date).Count();
+
+            if (result >= 3)
+            {
+                throw new TourAllocationException(dateTime.AddDays(1).Date);
+            }
             listOfTours.Add(new Tour{NameOfTour = nameoftour, DateOfTour = dateTime.Date, NumberOfSeats = numberofseats});
         }
 
         public List<Tour> GetToursFor(DateTime timeTour)
         {
-            var result = listOfTours.Where(x => x.DateOfTour.Date == timeTour.Date).Count();
-            if (result > 1)
-            {
-                throw new TourAllocationException(timeTour.AddDays(1));
-            }
-            return listOfTours;
+            return listOfTours.Where(x => x.DateOfTour.Date == timeTour.Date).ToList();
         }
     }
 }
