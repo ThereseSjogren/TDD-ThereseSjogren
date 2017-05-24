@@ -15,4 +15,9 @@ namespace TravelAgency
             this.SuggestedTime = suggestedTime;
         }
     }
+
+    public class SameNameSameDateException : Exception
+    {
+        
+    }
 }

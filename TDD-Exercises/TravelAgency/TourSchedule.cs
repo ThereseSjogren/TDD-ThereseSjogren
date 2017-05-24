@@ -15,11 +15,16 @@ namespace TravelAgency
 
         public void CreateTour(string nameoftour, DateTime dateTime, int numberofseats)
         {
-            var result = listOfTours.Where(x => x.DateOfTour.Date == dateTime.Date).Count();
-
+            var result = listOfTours.Count(x => x.DateOfTour.Date == dateTime.Date);
+            var hasConflictingTour = listOfTours.Any(x => x.NameOfTour == nameoftour&& x.DateOfTour.Date == dateTime.Date);
+           
             if (result >= 3)
             {
                 throw new TourAllocationException(dateTime.AddDays(1).Date);
+            }
+            if (hasConflictingTour)
+            {
+                throw new SameNameSameDateException();
             }
             listOfTours.Add(new Tour{NameOfTour = nameoftour, DateOfTour = dateTime.Date, NumberOfSeats = numberofseats});
         }

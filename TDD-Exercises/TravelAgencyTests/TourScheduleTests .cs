@@ -68,6 +68,11 @@ namespace TravelAgencyTests
             Assert.Throws<TourAllocationException>(() => sut.CreateTour("Winter safari", new DateTime(2013, 1, 1, 10, 15, 0), 20));
         }
 
+        #region Stretch Task
+        
+        //To make the exception in the last point of the main task more helpful, 
+        //it should suggest the next available date where there's a free slot, 
+        //i.e. less than three scheduled tours.
         [Test]
         public void MoreThanOneTourSuggestNextTour()
         {
@@ -78,5 +83,21 @@ namespace TravelAgencyTests
             var e=Assert.Throws<TourAllocationException>(() => sut.CreateTour("A new in january safari", new DateTime(2013, 1, 1, 10, 15, 0), 20));
             Assert.AreEqual(new DateTime(2013,1,2),e.SuggestedTime, "Correct suggested time");
         }
+
+        //The name of the tour is used to identify it within a given day. 
+        //Trying to schedule a tour with the same name on the same date should throw an exception.
+
+        [Test]
+        public void ScheduleSameNameAndDateThrowException()
+        {
+            sut.CreateTour("New years day safari", new DateTime(2013, 1, 1, 10, 15, 0), 20);
+
+
+            Assert.Throws<SameNameSameDateException>(() => 
+            sut.CreateTour("New years day safari", new DateTime(2013, 1, 1, 10, 15, 0), 20) );
+        }
+
+
+        #endregion
     }
 }
