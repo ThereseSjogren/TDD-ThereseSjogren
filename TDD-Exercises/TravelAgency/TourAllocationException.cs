@@ -20,4 +20,9 @@ namespace TravelAgency
     {
         
     }
+
+    public class NegativeSeatException : Exception
+    {
+        
+    }
 }

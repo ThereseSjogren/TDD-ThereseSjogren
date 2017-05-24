@@ -97,6 +97,17 @@ namespace TravelAgencyTests
             sut.CreateTour("New years day safari", new DateTime(2013, 1, 1, 10, 15, 0), 20) );
         }
 
+        //•	Also make sure createTour throws an exception when the number of seats is negative.
+        //Debate whether to make the exception in this case a TourAllocationException 
+        //(or ask instructor). Also debate whether 0 should be an acceptable value.
+        [Test]
+        public void ShouldThrowExceptionWhenSeatsAreZeroOrNegative()
+        {
+
+            Assert.Throws<NegativeSeatException>(()=> 
+            sut.CreateTour("New years day safari", new DateTime(2013, 1, 1, 10, 15, 0), -1));
+
+        }
 
         #endregion
     }

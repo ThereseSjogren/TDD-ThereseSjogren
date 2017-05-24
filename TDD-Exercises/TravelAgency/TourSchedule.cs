@@ -26,6 +26,10 @@ namespace TravelAgency
             {
                 throw new SameNameSameDateException();
             }
+            if (numberofseats < 1)
+            {
+                throw new NegativeSeatException();
+            }
             listOfTours.Add(new Tour{NameOfTour = nameoftour, DateOfTour = dateTime.Date, NumberOfSeats = numberofseats});
         }
 
