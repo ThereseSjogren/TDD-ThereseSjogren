@@ -46,22 +46,26 @@ namespace ValidationEngineTests
             //Arrange
             var sut=new Validator();
 
-            //Act
-            var res = sut.ValidateEmailAddress("");
+            Assert.Throws<ExceptionMadeBy>(() => { sut.ValidateEmailAddress(""); });
 
-            //Assert
-            Assert.IsFalse(res);
+            ////Act
+            //var res = sut.ValidateEmailAddress("");
+
+            ////Assert
+            //Assert.IsFalse(res);
 
         }
 
         [Test]
         public void IfMailNullReturnFalse()
         {
-            var sut=new Validator();
+            var sut = new Validator();
 
-            var res = sut.ValidateEmailAddress(null);
+            Assert.Throws<ExceptionMadeBy>(() => { sut.ValidateEmailAddress(""); });
 
-            Assert.IsFalse(res);
+            //var res = sut.ValidateEmailAddress(null);
+
+            //Assert.IsFalse(res);
         }
 
         [Test]

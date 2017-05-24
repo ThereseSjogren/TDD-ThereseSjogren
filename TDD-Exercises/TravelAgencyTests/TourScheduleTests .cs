@@ -11,6 +11,7 @@ namespace TravelAgencyTests
     [TestFixture]
     public class TourScheduleTests
     {
+        [Test]
         public void CanCreateNewTour()
         {
             var sut = new TourSchedule();
@@ -23,6 +24,12 @@ namespace TravelAgencyTests
             Assert.AreEqual("New years day safari",result[0].NameOfTour);
             Assert.AreEqual(20,result[0].NumberOfSeats);
 
+        }
+
+        [Test]
+        public void ToursAreScheduledByDateOnly()
+        {
+            var sut = new TourSchedule();
         }
     }
 }

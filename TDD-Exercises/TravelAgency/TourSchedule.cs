@@ -5,18 +5,20 @@ namespace TravelAgency
 {
     public class TourSchedule
     {
+        private List<Tour> listOfTours;
         public TourSchedule()
         {
+            listOfTours = new List<Tour>();
         }
 
         public void CreateTour(string nameoftour, DateTime dateTime, int numberofseats)
         {
-            throw new NotImplementedException();
+            listOfTours.Add(new Tour{NameOfTour = nameoftour, DateOfTour = dateTime.Date, NumberOfSeats = numberofseats});
         }
 
         public List<Tour> GetToursFor(DateTime timeTour)
         {
-            throw new NotImplementedException();
+            return listOfTours;
         }
     }
 }
