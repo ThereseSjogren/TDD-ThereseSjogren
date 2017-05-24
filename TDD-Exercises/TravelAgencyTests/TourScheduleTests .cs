@@ -109,6 +109,14 @@ namespace TravelAgencyTests
 
         }
 
+        //Is it possible to ask for an unbooked day without getting an exception?
+        [Test]
+        public void IsItPossibleToAskForUnbookedDay()
+        {
+            var result = sut.GetToursFor(new DateTime(2013, 1, 1));
+            Assert.AreEqual(0, result.Count);
+        }
+
         #endregion
     }
 }
