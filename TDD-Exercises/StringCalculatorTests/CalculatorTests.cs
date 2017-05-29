@@ -52,5 +52,18 @@ namespace StringCalculatorTests
 
             Assert.AreEqual(6,result);
         }
+
+        [Test]
+        public void AddNegativeNumberShouldThrowExceptions()
+        {
+            Assert.Throws<NegativeNumberException>(() => sut.Add("-10"));
+        }
+
+        [Test]
+        public void AddNumberBiggerThanThousandShouldBeIgnored()
+        {
+            var result = sut.Add("1,1001");
+            Assert.AreEqual(1,result);
+        }
     }
 }

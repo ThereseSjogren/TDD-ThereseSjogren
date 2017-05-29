@@ -12,17 +12,17 @@ namespace StringCalculator
         public int Add(string numbers)
         {
             int result = 0;
-            var sum = 0;
+            bool negativeNumber = false;
             List<string> numbersList = new List<string>();
             List<char> delimetersList = new List<char>() { ','};
+            List<int>negativeList = new List<int>();
             Regex regexSplit = new Regex(@"^\/{2}.?$");
+
             if (string.IsNullOrEmpty(numbers))
             {
                 return result;
             }
 
-            //Splittar på kommatecknet och tar ut siffrorna som sparas i en array av strängar.
-            //var splitnumber = numbers.Split(',');
             var newLineString = numbers.Split('\n');
             if (regexSplit.IsMatch(newLineString.ToString()))
             {
@@ -38,13 +38,36 @@ namespace StringCalculator
                 
             }
 
-            //Går igenom array och parsa om dem till int
             foreach (var n in numbersList)
             {
-                sum += int.Parse(n);
+                int number;
+                int.TryParse(n,out number);
+
+                if (number < 0)
+                {
+                    negativeNumber = true;
+                    negativeList.Add(number);
+                }
+                else
+                {
+                    if (number < 1001)
+                    {
+                        result += number;
+                    }
+                }
+                
+            }
+            if (negativeNumber)
+            {
+                var message = "negatives not allowed ";
+                foreach (var nn in negativeList)
+                {
+                    message += "- " + nn + " ";
+                }
+                throw new NegativeNumberException();
             }
 
-            return sum;
+            return result;
         }
     }
 }
