@@ -49,6 +49,7 @@ namespace StringCalculatorTests
         public void AddNumberThatIsSplitOnNewLine()
         {
             var result = sut.Add("1\n2,3");
+            //var result = sut.Add("1,\n");
 
             Assert.AreEqual(6,result);
         }
