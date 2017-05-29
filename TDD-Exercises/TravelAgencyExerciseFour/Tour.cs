@@ -11,5 +11,17 @@ namespace TravelAgencyExerciseFour
         public string NameOfTour { get; set; }
         public DateTime DateOfTour { get; set; }
         public int NumberOfSeats { get; set; }
+
+        public Tour()
+        {
+            
+        }
+
+        public Tour(string tourname,DateTime tourdate, int numberofseats)
+        {
+            this.NameOfTour = tourname;
+            this.DateOfTour = tourdate;
+            this.NumberOfSeats = numberofseats;
+        }
     }
 }

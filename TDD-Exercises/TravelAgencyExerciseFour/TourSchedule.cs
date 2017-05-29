@@ -8,11 +8,13 @@ namespace TravelAgencyExerciseFour
 {
     public class TourSchedule : ITourSchedule
     {
-        private List<Tour> listOfTours;
+        public List<Tour> listOfTours { get; set; }
         public TourSchedule()
         {
             listOfTours = new List<Tour>();
         }
+
+      
 
         public void CreateTour(string nameoftour, DateTime dateTime, int numberofseats)
         {

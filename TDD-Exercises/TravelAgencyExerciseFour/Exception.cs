@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace TravelAgencyExerciseFour
 {
-    public class TourAllocationException:Exception
+    public class BookingPersonOnNonexistentTourException:Exception
+    {
+    }
+    public class TourAllocationException : Exception
     {
         public DateTime? SuggestedTime { get; set; }
 
@@ -26,4 +29,3 @@ namespace TravelAgencyExerciseFour
 
     }
 }
-

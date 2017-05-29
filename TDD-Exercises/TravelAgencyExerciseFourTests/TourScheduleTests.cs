@@ -9,7 +9,7 @@ using TravelAgencyExerciseFour;
 namespace TravelAgencyExerciseFourTests
 {
     [TestFixture]
-    [Category("ExerciseFour - TourScheduleTests")]
+    [Category("ExerciseFour TourScheduleTests")]
     public class TourScheduleTests
     {
         private TourSchedule sut;

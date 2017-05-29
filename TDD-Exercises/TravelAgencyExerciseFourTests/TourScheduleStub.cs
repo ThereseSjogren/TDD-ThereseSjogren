@@ -9,16 +9,23 @@ namespace TravelAgencyExerciseFourTests
 {
     public class TourScheduleStub:ITourSchedule
     {
-        public List<Tour>tours = new List<Tour>();
+        public List<Tour> listOfTours { get; set; }
 
-        public void CreateTour(string nameoftour, DateTime dateTime, int numberofseats)
+        public TourScheduleStub()
         {
-            throw new NotImplementedException();
+            
+        }
+        public void CreateTour(string nameoftour, DateTime tourDateTime, int numberofseats)
+        {
+            var addTour= new Tour();
+            addTour.NameOfTour = nameoftour;
+            addTour.DateOfTour = tourDateTime;
+            addTour.NumberOfSeats = numberofseats;
         }
 
         public List<Tour> GetToursFor(DateTime timeTour)
         {
-            return tours;
+            return listOfTours;
         }
     }
 }
