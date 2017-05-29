@@ -13,8 +13,8 @@ namespace StringCalculator
         {
             int result = 0;
             var sum = 0;
-            List<int>numbersList = new List<int>();
-            List<char>delimetersList = new List<char>(){',','\n'};
+            List<int> numbersList = new List<int>();
+            List<char> delimetersList = new List<char>() { ','};
             Regex regexSplit = new Regex(@"^[\d\s\n,]+$");
             if (string.IsNullOrEmpty(numbers))
             {
@@ -25,13 +25,13 @@ namespace StringCalculator
             var splitnumber = numbers.Split(',');
             var newLineString = numbers.Split('\n');
 
-            
+
             //Går igenom array och parsa om dem till int
             foreach (var n in splitnumber)
             {
                 sum += int.Parse(n);
             }
-            
+
             return sum;
         }
     }
