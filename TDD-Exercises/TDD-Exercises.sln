@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelAgencyExerciseFourTes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelAgencyExerciseFour", "TravelAgencyExerciseFour\TravelAgencyExerciseFour.csproj", "{8F797DE1-20A5-4FF5-AE45-8110A831EA6C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ExerciseFive - NSubstitute", "ExerciseFive - NSubstitute", "{C20D67B6-D48F-454F-B6E8-2B99E09280BD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
