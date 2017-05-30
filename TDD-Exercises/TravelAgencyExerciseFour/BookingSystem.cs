@@ -22,8 +22,12 @@ namespace TravelAgencyExerciseFour
             {
                 throw new BookingPersonOnNonexistentTourException();
             }
+            if (tour.NumberOfSeats < seats)
+            {
+                throw new BookingPersonOnTourWhereNoSeatsLeftException();
+            }
             var booking=new Booking();
-            booking.TourName = tourName;
+            booking.TourName =tourName;
             booking.DateOfTour = dateOfTour;
             booking.Seats = seats;
             booking.passenger = stubPassenger;

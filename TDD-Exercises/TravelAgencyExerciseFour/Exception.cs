@@ -28,4 +28,9 @@ namespace TravelAgencyExerciseFour
     {
 
     }
+
+    public class BookingPersonOnTourWhereNoSeatsLeftException : Exception
+    {
+        
+    }
 }

@@ -32,8 +32,9 @@ namespace TravelAgencyExerciseFourTests
 
         [Test]
         public void CanCreateBooking()
-        { //Number 20 on exercise 4
+        { 
             //Arrange
+            tourScheduleStub.listOfTours=new List<Tour>();
             tourScheduleStub.listOfTours.Add(new Tour
             {
                 NameOfTour = "Wild Tour",
@@ -48,22 +49,42 @@ namespace TravelAgencyExerciseFourTests
 
             //Assert
             Assert.AreEqual(1,bookingsList.Count);
+            var model = bookingsList[0];
+            Assert.AreEqual("Wild Tour", model.TourName);
+            Assert.AreEqual(StubPassenger,model.passenger);
+            Assert.AreEqual(tourScheduleStub.listOfTours[0].NameOfTour,model.TourName);
             
-            //17.	Assert that this Booking instance contains a reference to the correct 
-            //Tour object and the correct Passenger.
-            //Assert.IsInstanceOf<Passenger>(StubPassenger);
-            //Assert.IsInstanceOf<TourScheduleStub>(tourScheduleStub);
         }
 
         [Test]
         public void BookingAPassengerOnANonExistentTourThrowsException()
         {
             //Arrange
+            tourScheduleStub.listOfTours = new List<Tour>();
+
             //Act
 
             //Assert
             Assert.Throws<BookingPersonOnNonexistentTourException>(() =>
             sut.CreateBooking("Wild Tour", new DateTime(2018, 1, 1), 10, StubPassenger));
+        }
+
+        [Test]
+        public void BookingAPassengerOnTourWithNoSeatsLeftThrowsException()
+        {
+            //Arrange
+            tourScheduleStub.listOfTours = new List<Tour>();
+            tourScheduleStub.listOfTours.Add(new Tour
+            {
+                NameOfTour = "Wild Tour",
+                DateOfTour = new DateTime(2018, 1, 1),
+                NumberOfSeats = 10
+            });
+
+            //Act
+            //Assert
+            Assert.Throws<BookingPersonOnTourWhereNoSeatsLeftException>(() =>
+                sut.CreateBooking("Wild Tour", new DateTime(2018, 1, 1), 12, StubPassenger));
         }
     }
 }
