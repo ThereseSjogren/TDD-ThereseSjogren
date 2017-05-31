@@ -33,6 +33,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ExtraExercise7 - Func And D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtraExercise7FuncAndDelegate", "ExtraExercise7FuncAndDelegate\ExtraExercise7FuncAndDelegate.csproj", "{DF752FB0-4EB4-477B-A68C-F5F59057FF05}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtraExercise3NSubstitute.Tests", "ExtraExercise3NSubstitute.Tests\ExtraExercise3NSubstitute.Tests.csproj", "{CAD297E6-3B9F-4976-AA6F-09DE369C7404}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtraExercise3NSubstitute", "ExtraExercise3NSubstitute\ExtraExercise3NSubstitute.csproj", "{52245DF3-91F6-4A83-8580-FF88C2B921C5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +79,14 @@ Global
 		{DF752FB0-4EB4-477B-A68C-F5F59057FF05}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF752FB0-4EB4-477B-A68C-F5F59057FF05}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF752FB0-4EB4-477B-A68C-F5F59057FF05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAD297E6-3B9F-4976-AA6F-09DE369C7404}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAD297E6-3B9F-4976-AA6F-09DE369C7404}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAD297E6-3B9F-4976-AA6F-09DE369C7404}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAD297E6-3B9F-4976-AA6F-09DE369C7404}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52245DF3-91F6-4A83-8580-FF88C2B921C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52245DF3-91F6-4A83-8580-FF88C2B921C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52245DF3-91F6-4A83-8580-FF88C2B921C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52245DF3-91F6-4A83-8580-FF88C2B921C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -89,5 +101,7 @@ Global
 		{06DAFA54-60DF-482A-883B-2EBD11F7B7EB} = {B8F95DA9-F6D0-4DBD-BD66-EEC91E24F7B8}
 		{8F797DE1-20A5-4FF5-AE45-8110A831EA6C} = {B8F95DA9-F6D0-4DBD-BD66-EEC91E24F7B8}
 		{DF752FB0-4EB4-477B-A68C-F5F59057FF05} = {8A0F8A81-09F3-4EE5-ACEB-B075E51FD2F0}
+		{CAD297E6-3B9F-4976-AA6F-09DE369C7404} = {C20D67B6-D48F-454F-B6E8-2B99E09280BD}
+		{52245DF3-91F6-4A83-8580-FF88C2B921C5} = {C20D67B6-D48F-454F-B6E8-2B99E09280BD}
 	EndGlobalSection
 EndGlobal
