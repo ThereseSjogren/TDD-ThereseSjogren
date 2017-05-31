@@ -99,8 +99,11 @@ namespace ExtraExercise3NSubstitute.Tests
         public void VerifyThat_GetAuditLog_GetsTheLogFromTheAuditLogger()
         {
             //Arrange
+            iAuditLoggerMock.GetLog().Returns(new List<string>() {"OneItem", "TwoItem", "ThreeItem"});
             //Act
+            var result=sut.GetAuditLog();
             //Assert
+           Assert.AreEqual(3,result.Count);
         }
     }
 }
