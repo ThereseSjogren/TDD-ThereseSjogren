@@ -48,8 +48,9 @@ namespace TravelAgencyExerciseFourTests
             List<Booking> bookingsList = sut.GetBookingsFor(StubPassenger);
 
             //Assert
-            Assert.AreEqual(1,bookingsList.Count);
             var model = bookingsList[0];
+
+            Assert.AreEqual(1,bookingsList.Count);
             Assert.AreEqual("Wild Tour", model.TourName);
             Assert.AreEqual(StubPassenger,model.passenger);
             Assert.AreEqual(tourScheduleStub.listOfTours[0].NameOfTour,model.TourName);
